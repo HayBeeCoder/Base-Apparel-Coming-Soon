@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+
+
+</head>
+
+<body>
+    <div class='wrapper'>
+        <div class="logo__section container">
+            <img src="images/logo.svg" alt="Brand's logo">
+
+        </div>
+
+        <div class="hero__section">
+            <img class="img-mobile" src="images/hero-phone.jpg" alt="woman in pink cloth touching her hair with a tree in the background">
+            <img src="images/hero-desktop.jpg" alt="" class="img-desktop">
+        </div>
+
+
+
+
+        <div class="text__section container">
+            <div class="heading_et_paragraph">
+                <h1><span class="title--light">we're </span> <span>coming</span><span>soon</span></h1>
+                <p class="intro">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals</p>
+
+            </div>
+
+        </div>
+        <div class="form__section container">
+            <form action="">
+
+                <input type="email" name="user_email" id="email" placeholder="Email-address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                <button type="submit" class="btn"><img class="arrow" src="images/icon-arrow.svg" alt=""></button>
+
+            </form>
+        </div>
+        <footer class="container">
+            <p class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">HayBeeCoder</a>.
+            </p>
+        </footer>
+    </div>
+    <script>
+        const input = document.querySelector('input')
+        const btn = document.querySelector('button')
+        const formWrapper = document.querySelector('.form__section')
+        const errorMsg = document.createElement('p')
+        const errorIcon = document.createElement('img')
+        const form = document.querySelector('form')
+
+        function displayError() {
+            if (input.value !== input.pattern) {
+                errorMsg.textContent = 'Please provide a valid mail!'
+                errorMsg.setAttribute('class', 'msg--error')
+                formWrapper.appendChild(errorMsg)
+
+
+                errorIcon.setAttribute('src', './images/icon-error.svg')
+                errorIcon.classList.add('icon--error')
+                formWrapper.appendChild(errorIcon)
+
+                form.setAttribute('class', 'form--border-red')
+                btn.setAttribute('class', 'btn--error');
+            }
+
+
+
+
+        }
+
+        btn.onclick = displayError;
+    </script>
+</body>
+
+</html>
