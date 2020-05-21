@@ -30,7 +30,6 @@
             width: 90%;
             margin: 0 auto;
         }
-
         /* --!-- */
         /* logo-section */
         
@@ -67,7 +66,7 @@
             color: var(--primary_heavy);
             margin: 0;
             font-size: 4rem;
-            letter-spacing: .1em;
+            letter-spacing: .05em;
             text-transform: uppercase;
             line-height: 1.2;
         }
